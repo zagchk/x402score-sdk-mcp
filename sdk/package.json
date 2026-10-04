@@ -1,11 +1,16 @@
 {
   "name": "x402score-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript client for the x402Score API — free reputation scores for x402-paid API endpoints.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zagchk/x402score-sdk-mcp.git",
+    "directory": "sdk"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit"
