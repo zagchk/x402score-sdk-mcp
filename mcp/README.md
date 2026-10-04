@@ -5,8 +5,12 @@ agent tools — check an x402-paid API endpoint's trust score before paying it,
 from inside any MCP-compatible client (Claude Desktop, Claude Code, etc.).
 
 **Not yet published/submitted anywhere.** Run it locally for now; see the main
-project README for why publishing to an MCP registry is being held until after
-the scoring model's first real calibration cycle.
+project README for why publishing to an MCP registry is being held until the
+on-chain modifier's calibration gate closes (~2026-10-19). Registry listing
+content is pre-written in `REGISTRY_SUBMISSION.md`, ready to copy-paste the
+moment the gate closes. Last re-verified end-to-end against live production
+(real stdio MCP client, all 4 tools, confirmed on-chain fields and current
+calibration data flow through correctly): 2026-10-04.
 
 ## Tools
 
