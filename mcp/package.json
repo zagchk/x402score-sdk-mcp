@@ -1,0 +1,25 @@
+{
+  "name": "x402score-mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing x402Score's reputation data as agent tools — check an endpoint's trust score before paying it.",
+  "type": "module",
+  "main": "dist/server.js",
+  "bin": {
+    "x402score-mcp": "dist/server.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "x402score-sdk": "file:../sdk",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.0.0"
+  },
+  "license": "MIT"
+}
