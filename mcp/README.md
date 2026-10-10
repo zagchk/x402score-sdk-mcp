@@ -9,8 +9,9 @@ project README for why publishing to an MCP registry is being held until the
 on-chain modifier's calibration gate closes (~2026-10-19). Registry listing
 content is pre-written in `REGISTRY_SUBMISSION.md`, ready to copy-paste the
 moment the gate closes. Last re-verified end-to-end against live production
-(real stdio MCP client, all 4 tools, confirmed on-chain fields and current
-calibration data flow through correctly): 2026-10-04.
+(real stdio MCP client, all 5 tools + the methodology resource, confirmed
+structured output, error handling, and tool annotations all work correctly):
+2026-10-10.
 
 ## Tools
 
@@ -18,6 +19,16 @@ calibration data flow through correctly): 2026-10-04.
 - **`search_leaderboard`** — search/browse tracked endpoints by name/domain/url/id and/or vertical.
 - **`get_calibration_report`** — is the scoring formula actually predictive?
 - **`submit_endpoint`** — add a new x402 endpoint to the monitoring queue.
+- **`ping`** — cheap reachability/latency check, useful as a first call when connecting.
+
+All tools declare `readOnlyHint`/`destructiveHint`/`idempotentHint`/`openWorldHint`
+annotations and a matching `outputSchema`, and all return structured errors
+(`isError: true` with a clear message) instead of letting a network failure or
+backend timeout kill the connection. A `x402score://methodology` resource
+explains what the score, grade, credible interval, and on-chain modifier
+actually mean — read once per session rather than inferred from tool
+descriptions alone. Requests time out client-side after 10s so a slow or
+degraded backend fails fast and visibly instead of hanging the caller.
 
 ## Install & run
 

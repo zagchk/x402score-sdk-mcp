@@ -7,8 +7,8 @@ the gate is actually satisfied** (check the Calibration & Audit dashboard's
 on-chain modifier correlation data, not just the calendar date).
 
 Last re-verified end-to-end against live production (real stdio MCP client,
-all 4 tools, confirmed on-chain modifier fields and current calibration data
-flow through correctly): **2026-10-04**.
+all 5 tools + the methodology resource, confirmed structured output, error
+handling, and tool annotations all work correctly): **2026-10-10**.
 
 ## Short description (one line, ~100 chars)
 
@@ -62,6 +62,13 @@ Add an x402-paid API endpoint to x402Score's monitoring queue so it starts getti
 and scored. Rate-limited server-side.
 
 **Input**: `url` (string, http/https URL) — the full URL of the x402-paid endpoint to monitor.
+
+### `ping`
+Cheap connectivity check — confirms the x402Score API is reachable and reports round-trip
+latency, without fetching real leaderboard or score data. Useful as a first call when
+first connecting to this server.
+
+**Input**: none.
 
 ## Example usage (for registry listing copy)
 

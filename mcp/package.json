@@ -1,6 +1,6 @@
 {
   "name": "x402score-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server exposing x402Score's reputation data as agent tools — check an endpoint's trust score before paying it.",
   "type": "module",
   "main": "dist/server.js",
